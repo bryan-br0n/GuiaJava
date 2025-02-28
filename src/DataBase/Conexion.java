@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package DataBase;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -20,10 +19,13 @@ public class Conexion {
     private final String USER = "root";
     private final String PASSWORD = "Quintanill4"; 
 
-public Connection connection ;
-public Conexion() {
-this.connection = null;
+    public Connection connection ;
+    public static Conexion singleInstance;
+    
+    private Conexion() {
+    this.connection = null;
 }
+    
 public  Connection conectar (){
         try {
             Class .forName(DB_DRIVER);
@@ -44,4 +46,11 @@ public void desconectar(){
         JOptionPane.showMessageDialog(null, e.getMessage());
     }
 }
+public synchronized static Conexion getInstance() {
+    if(singleInstance == null){
+        singleInstance = new Conexion();
+    }
+    return singleInstance;
 }
+}
+
