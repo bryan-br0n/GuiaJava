@@ -58,6 +58,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("puntoVenta");
 
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Presentacion/images/este.png"))); // NOI18N
         jMenu1.setText("Almacen");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_DOWN_MASK));
