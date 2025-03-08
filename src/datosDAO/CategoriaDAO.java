@@ -53,7 +53,7 @@ public class CategoriaDAO implements CRUDGeneralInterface<Categoria> {
     public boolean insert(Categoria object) {
         resp = false;
         try {
-            ps = conectar.conectar().prepareStatement("INSERT INTO categoria(?,?,1)");
+            ps = conectar.conectar().prepareStatement("INSERT INTO categoria (nombre,descripcion, estado) VALUES(?,?,1)");
             ps.setString(1, object.getNombre());
             ps.setString(2, object.getDescripcion());
             if(ps.executeUpdate() > 0){
